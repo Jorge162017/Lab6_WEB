@@ -1,0 +1,14 @@
+CREATE USER IF NOT EXISTS 'JorgeLopez'@'%' IDENTIFIED BY '123456';
+GRANT ALL PRIVILEGES ON blog_viajes.* TO 'JorgeLopez'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+CREATE TABLE IF NOT EXISTS post (
+    id int AUTO_INCREMENT PRIMARY KEY,
+    title varchar(255) NOT NULL,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    author varchar(50),
+    img TEXT
+);
+
+
