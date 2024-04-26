@@ -6,9 +6,13 @@ import { updatePost } from "./postController.js";
 import { deletePost } from "./postController.js";
 import express from 'express';
 import connection from './connection.js';
+import cors from 'cors';
 
 const app = express();
+
+
 app.use(express.json());
+app.use(cors());
 
 app.get("/post", async(req, res) => { 
     const callPost = await getPosts();
